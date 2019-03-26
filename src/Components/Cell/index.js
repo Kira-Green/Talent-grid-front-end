@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import css from "./Element.module.css";
+import css from "./Cell.module.css";
 import Employee from "../Employee";
 
-class Element extends Component {
+class Cell extends Component {
     onDragOver = event => {
         event.preventDefault();
     };
@@ -45,4 +45,4 @@ class Element extends Component {
     }
 }
 
-export default Element;
+export default Cell;

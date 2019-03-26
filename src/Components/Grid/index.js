@@ -1,29 +1,29 @@
 import React, { Component } from "react";
 import css from "./Grid.module.css";
-import Element from "../Element";
+import Cell from "../Cell";
 
 class Grid extends Component {
-    renderElement(i) {
-        return <Element value={i} />;
+    renderCell(i) {
+        return <Cell value={i} />;
     }
 
     render() {
         return (
             <div className={css.gridContainer}>
                 <div className={css.gridRow}>
-                    <Element employee={this.props.employee} />
-                    <Element />
-                    <Element />
+                    <Cell data-position="1" />
+                    <Cell data-position="2" />
+                    <Cell data-position="3" />
                 </div>
                 <div className={css.gridRow}>
-                    <Element />
-                    <Element />
-                    <Element />
+                    <Cell data-position="4" />
+                    <Cell data-position="5" />
+                    <Cell data-position="6" />
                 </div>
                 <div className={css.gridRow}>
-                    <Element />
-                    <Element />
-                    <Element />
+                    <Cell data-position="7" />
+                    <Cell data-position="8" />
+                    <Cell data-position="9" />
                 </div>
             </div>
         );
