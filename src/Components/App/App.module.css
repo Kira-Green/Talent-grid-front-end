@@ -1,0 +1,7 @@
+.BankAndEmployeeContainer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: cover;
+    height: 75vh;
+}

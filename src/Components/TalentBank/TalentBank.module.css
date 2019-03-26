@@ -1,0 +1,11 @@
+.bank {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 300px;
+    border: 1px solid #deecf1;
+    list-style: none;
+    border-radius: 10px;
+}
