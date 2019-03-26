@@ -18,7 +18,46 @@ class App extends Component {
                     staffNumber: "E654321",
                     position: 0
                 },
-                { name: "Bukola Surname", staffNumber: "E135790", position: 0 }
+                {
+                    name: "Bukola Surname",
+                    staffNumber: "E135790",
+                    position: 0
+                },
+                {
+                    name: "Kira Green",
+                    staffNumber: "E123456",
+                    position: 0
+                },
+                {
+                    name: "Manu Magalhaes",
+                    staffNumber: "E654321",
+                    position: 0
+                },
+                {
+                    name: "Bukola Surname",
+                    staffNumber: "E135790",
+                    position: 0
+                },
+                {
+                    name: "Kira Green",
+                    staffNumber: "E123456",
+                    position: 0
+                },
+                {
+                    name: "Manu Magalhaes",
+                    staffNumber: "E654321",
+                    position: 0
+                },
+                {
+                    name: "Bukola Surname",
+                    staffNumber: "E135790",
+                    position: 0
+                },
+                {
+                    name: "Kira Green",
+                    staffNumber: "E123456",
+                    position: 0
+                }
             ]
         };
     }

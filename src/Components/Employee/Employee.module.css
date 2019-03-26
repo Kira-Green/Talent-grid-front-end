@@ -1,8 +1,13 @@
 .employee {
-    color: white;
+    border: 2px solid #deecf1;
     border-radius: 6px;
-    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
-    background: #ea1d25;
-    padding: 4px;
+    min-width: 130px;
+    padding: 6px;
     margin: 4px;
+    transform: translateX(-15%);
+
+    color: #ea1d25;
+    text-align: center;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+    font-size: 14px;
 }
