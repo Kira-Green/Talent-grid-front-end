@@ -1,0 +1,8 @@
+.employee {
+    color: white;
+    border-radius: 6px;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+    background: #ea1d25;
+    padding: 4px;
+    margin: 4px;
+}
