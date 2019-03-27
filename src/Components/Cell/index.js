@@ -3,46 +3,51 @@ import css from "./Cell.module.css";
 import Employee from "../Employee";
 
 class Cell extends Component {
-    onDragOver = event => {
-        event.preventDefault();
-    };
+  constructor(props) {
+    super(props);
+  }
 
-    onDrop = event => {
-        console.log("event", event);
-        let employee = event.dataTransfer.getData("id");
-        console.log(employee);
-        // this.setState(state => ({
-        //     employees: [...state.employees, employee]
-        // }));
-    };
+  onDragOver = event => {
+    event.preventDefault();
+  };
 
-    render() {
-        return (
-            <>
-                <div
-                    className={css.element}
-                    draggable
-                    onDragOver={event => this.onDragOver(event)}
-                    onDrop={this.onDrop}
-                >
-                    {this.props.employees ? (
-                        <ul>
-                            {this.props.employees.map((item, idx) => (
-                                <Employee
-                                    key={idx}
-                                    name={item.name}
-                                    staffNumber={item.staffNumber}
-                                />
-                            ))}
-                        </ul>
-                    ) : (
-                        ""
-                    )}
-                    Test
-                </div>
-            </>
-        );
-    }
+  onDrop = event => {
+    // console.log("event", event);
+    let staffNumber = event.dataTransfer.getData("staffNumber");
+    // console.log("staff number: ", staffNumber);
+    const index = this.props.employees.findIndex(
+      item => item.staffNumber === staffNumber
+    );
+    // console.log("index:", index);
+    const newPosition = this.props.gridPosition;
+    this.props.handleDrop(index, newPosition);
+    // console.log("dropped employee", staffNumber);
+  };
+
+  render() {
+    return (
+      <>
+        <div
+          className={css.cell}
+          draggable
+          onDragOver={this.onDragOver}
+          onDrop={this.onDrop}
+        >
+          <ul className={css.cell}>
+            {this.props.employees
+              .filter(employee => employee.position === this.props.gridPosition)
+              .map((item, idx) => (
+                <Employee
+                  key={idx}
+                  name={item.name}
+                  staffNumber={item.staffNumber}
+                />
+              ))}
+          </ul>
+        </div>
+      </>
+    );
+  }
 }
 
 export default Cell;
