@@ -1,27 +1,27 @@
 .gridRow {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 450px;
-    height: 150px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 600px;
+  height: 200px;
 }
 
 .gridRow:nth-child(2) {
-    border-bottom: 1px solid #ea1d25;
-    border-top: 1px solid #ea1d25;
+  border-bottom: 1px solid #ea1d25;
+  border-top: 1px solid #ea1d25;
 }
 
 .gridRow > div:nth-child(2) {
-    border-left: 1px solid #ea1d25;
-    border-right: 1px solid #ea1d25;
+  border-left: 1px solid #ea1d25;
+  border-right: 1px solid #ea1d25;
 }
 
 .gridContainer {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    min-width: 300px;
-    min-height: 100px;
-    margin-top: -20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  min-width: 300px;
+  min-height: 100px;
+  /* margin-top: -20px; */
 }
