@@ -1,16 +1,27 @@
 .gridRow {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    width: 300px;
-    height: 100px;
+    width: 450px;
+    height: 150px;
+}
+
+.gridRow:nth-child(2) {
+    border-bottom: 1px solid #ea1d25;
+    border-top: 1px solid #ea1d25;
+}
+
+.gridRow > div:nth-child(2) {
+    border-left: 1px solid #ea1d25;
+    border-right: 1px solid #ea1d25;
 }
 
 .gridContainer {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     min-width: 300px;
-    min-height: 180px;
+    min-height: 100px;
+    margin-top: -20px;
 }
