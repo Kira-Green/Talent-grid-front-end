@@ -5,6 +5,7 @@
   align-items: center;
   width: cover;
   height: cover;
+  font-family: "Open Sans", sans-serif;
 }
 
 .container {
@@ -18,4 +19,8 @@
   list-style: none;
   border-radius: 10px;
   padding-right: 30px;
+}
+
+img {
+  background-image: cover;
 }

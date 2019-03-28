@@ -3,7 +3,7 @@
   flex-direction: column;
   justify-content: center;
   width: cover;
-  height: 7vh;
+  height: 6vh;
   background-color: #ea1d25;
   font-family: "Open Sans", sans-serif;
   color: #ffffff;
@@ -13,7 +13,7 @@
 a {
   color: #ffffff;
   text-decoration: none;
-  font-size: 17pt;
+  font-size: 15pt;
 }
 
 .linksContainer {

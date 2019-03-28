@@ -6,12 +6,24 @@
   width: 200px;
   height: 200px;
   border: 4px;
-  background-color: white;
   margin: 2px;
   padding: 0;
   list-style: none;
 }
 
 .titleText {
-  color: limegreen;
+  color: #9e3768;
+  z-index: -1;
+  top: 50%;
+  transform: translateY(120%);
+  text-align: center;
+  opacity: 0.4;
+  font-size: 20pt;
+  white-space: wrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.bg {
+  position: relative;
 }
