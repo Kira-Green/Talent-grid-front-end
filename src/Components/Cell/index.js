@@ -29,7 +29,6 @@ class Cell extends Component {
       <>
         <div
           className={css.cell}
-          draggable
           onDragOver={this.onDragOver}
           onDrop={this.onDrop}
         >
