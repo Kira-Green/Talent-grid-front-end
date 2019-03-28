@@ -7,6 +7,7 @@ import InputLabel from "@material-ui/core/InputLabel";
 
 import TextField from "@material-ui/core/TextField";
 
+let searchValue = "";
 class App extends Component {
   constructor(props) {
     super(props);
@@ -22,18 +23,19 @@ class App extends Component {
       gridPosition8: "Functional Potential",
       gridPosition9: "Organisational Potential",
 
-      employees: []
+      employees: [],
+      search: ""
     };
   }
 
-  componentDidMount() {
-    fetch("http://localhost:5000/employees")
-      .then(response => response.json())
-      //.then(response => console.log(response))
-      .then(({ payload }) =>
-        this.setState(() => ({ employees: payload.employee }))
-      );
-  }
+  // componentDidMount() {
+  //   fetch("http://localhost:5000/employees")
+  //     .then(response => response.json())
+  //     //.then(response => console.log(response))
+  //     .then(({ payload }) =>
+  //       this.setState(() => ({ employees: payload.employee }))
+  //     );
+  // }
 
   onDragOver = event => {
     event.preventDefault();
@@ -52,11 +54,41 @@ class App extends Component {
     }));
   };
 
+  handleSearch = event => {
+    searchValue = event.target.value;
+    this.setState(() => ({ search: searchValue }));
+    console.log(this.state.search);
+  };
+
+  findEmployee = () => {
+    console.log(`search value: ${this.state.search}`);
+    fetch(`http://localhost:5000/employees/${this.state.search}`)
+      .then(response => response.json())
+      // .then(response => console.log("response:", response))
+      .then(({ payload }) => {
+        const newEmployee = payload.employee;
+        console.log("new employee:", newEmployee);
+        this.setState(state => ({
+          employees: [...state.employees, newEmployee]
+        }));
+      })
+      .then(console.log(`all: ${this.state.employees}`));
+  };
+
   render() {
     return (
       <div className={css.BankAndEmployeeContainer}>
         <div className={css.talentBankContainer}>
-          <TextField fullWidth="true" placeholder="search by employee number" />
+          <div>
+            <TextField
+              onChange={event => this.handleSearch(event)}
+              fullWidth="true"
+              placeholder="search by employee number"
+            />
+            <Button variant="extendedFab" onClick={this.findEmployee}>
+              Find Employee
+            </Button>
+          </div>
           <TalentBank
             gridPosition={this.state.gridPosition0}
             employees={this.state.employees}
@@ -77,7 +109,6 @@ class App extends Component {
           gridPosition9={this.state.gridPosition9}
           employees={this.state.employees}
         />
-        <Button variant="extendedFab">Add Employee</Button>;
       </div>
     );
   }
