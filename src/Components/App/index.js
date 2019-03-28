@@ -61,18 +61,21 @@ class App extends Component {
   };
 
   findEmployee = () => {
-    console.log(`search value: ${this.state.search}`);
     fetch(`http://localhost:5000/employees/${this.state.search}`)
       .then(response => response.json())
-      // .then(response => console.log("response:", response))
-      .then(({ payload }) => {
-        const newEmployee = payload.employee;
-        console.log("new employee:", newEmployee);
-        this.setState(state => ({
-          employees: [...state.employees, newEmployee]
-        }));
+      .then(({ success, payload }) => {
+        if (success && payload.employee) {
+          console.log("success: ", success);
+          console.log("payload: ", payload);
+          const newEmployee = payload.employee;
+          this.setState(state => ({
+            employees: [...state.employees, newEmployee]
+          }));
+        } else {
+          alert("Employee not found.");
+        }
       })
-      .then(console.log(`all: ${this.state.employees}`));
+      .catch(err => alert("Employee not found."));
   };
 
   render() {
