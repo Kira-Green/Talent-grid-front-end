@@ -97,6 +97,16 @@ class App extends Component {
             employees={this.state.employees}
             onDragOver={event => this.onDragOver(event)}
             handleDrop={this.handleDrop}
+            gridPosition1={this.state.gridPosition1}
+            gridPosition2={this.state.gridPosition2}
+            gridPosition3={this.state.gridPosition3}
+            gridPosition4={this.state.gridPosition4}
+            gridPosition5={this.state.gridPosition5}
+            gridPosition6={this.state.gridPosition6}
+            gridPosition7={this.state.gridPosition7}
+            gridPosition8={this.state.gridPosition8}
+            gridPosition9={this.state.gridPosition9}
+            employees={this.state.employees}
           />
         </div>
         <Grid
