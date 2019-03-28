@@ -7,13 +7,14 @@ class Employee extends React.Component {
   };
 
   render() {
+    console.log(this.props);
     return (
       <li
         className={css.employee}
         draggable="true"
         onDragStart={event => this.onDragStart(event)}
       >
-        {this.props.name}
+        {`${this.props.firstName} ${this.props.lastName}`}
       </li>
     );
   }

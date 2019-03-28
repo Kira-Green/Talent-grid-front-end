@@ -36,7 +36,8 @@ class TalentBank extends React.Component {
           .map((item, idx) => (
             <Employee
               key={idx}
-              name={item.name}
+              firstName={item.firstName}
+              lastName={item.lastName}
               staffNumber={item.staffNumber}
             />
           ))}

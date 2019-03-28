@@ -7,11 +7,12 @@ import InputLabel from "@material-ui/core/InputLabel";
 
 import TextField from "@material-ui/core/TextField";
 
+let searchValue = "";
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      gridPosition0: "TalentBank",
+      gridPosition0: "",
       gridPosition1: "Exceptional Team Talent",
       gridPosition2: "Exceptional Functional Talent",
       gridPosition3: "Exceptional Organisational Talent",
@@ -22,60 +23,19 @@ class App extends Component {
       gridPosition8: "Functional Potential",
       gridPosition9: "Organisational Potential",
 
-      employees: [
-        {
-          name: "Kira Green",
-          staffNumber: "E123226",
-          position: "TalentBank"
-        },
-        {
-          name: "Manu Magalhaes",
-          staffNumber: "E654534",
-          position: "TalentBank"
-        },
-        {
-          name: "Stuart Roper",
-          staffNumber: "E135790",
-          position: "TalentBank"
-        },
-        {
-          name: "Donald Trump",
-          staffNumber: "E1231187",
-          position: "TalentBank"
-        },
-        {
-          name: "Theresa May",
-          staffNumber: "E654324",
-          position: "TalentBank"
-        },
-        {
-          name: "Jeremy Corbyn",
-          staffNumber: "E136543",
-          position: "TalentBank"
-        },
-        {
-          name: "Mickey Mouse",
-          staffNumber: "E123456",
-          position: "TalentBank"
-        },
-        {
-          name: "Donald Duck",
-          staffNumber: "E546744",
-          position: "TalentBank"
-        },
-        {
-          name: "Spongebob Squarepants",
-          staffNumber: "E137546",
-          position: "TalentBank"
-        },
-        {
-          name: "Micheal Knight",
-          staffNumber: "E123123",
-          position: "TalentBank"
-        }
-      ]
+      employees: [],
+      search: ""
     };
   }
+
+  // componentDidMount() {
+  //   fetch("http://localhost:5000/employees")
+  //     .then(response => response.json())
+  //     //.then(response => console.log(response))
+  //     .then(({ payload }) =>
+  //       this.setState(() => ({ employees: payload.employee }))
+  //     );
+  // }
 
   onDragOver = event => {
     event.preventDefault();
@@ -94,23 +54,48 @@ class App extends Component {
     }));
   };
 
+  handleSearch = event => {
+    searchValue = event.target.value;
+    this.setState(() => ({ search: searchValue }));
+    console.log(this.state.search);
+  };
+
+  findEmployee = () => {
+    fetch(`http://localhost:5000/employees/${this.state.search}`)
+      .then(response => response.json())
+      .then(({ success, payload }) => {
+        if (success && payload.employee) {
+          console.log("success: ", success);
+          console.log("payload: ", payload);
+          const newEmployee = payload.employee;
+          this.setState(state => ({
+            employees: [...state.employees, newEmployee]
+          }));
+        } else {
+          alert("Employee not found.");
+        }
+      })
+      .catch(err => alert("Employee not found."));
+  };
+
   render() {
     return (
-      <>
-        <div className={css.BankAndEmployeeContainer}>
-          <div className={css.talentBankContainer}>
+      <div className={css.BankAndEmployeeContainer}>
+        <div className={css.talentBankContainer}>
+          <div>
             <TextField
+              onChange={event => this.handleSearch(event)}
               fullWidth="true"
               placeholder="search by employee number"
             />
-            <TalentBank
-              gridPosition={this.state.gridPosition0}
-              employees={this.state.employees}
-              onDragOver={event => this.onDragOver(event)}
-              handleDrop={this.handleDrop}
-            />
+            <Button variant="extendedFab" onClick={this.findEmployee}>
+              Find Employee
+            </Button>
           </div>
-          <Grid
+          <TalentBank
+            gridPosition={this.state.gridPosition0}
+            employees={this.state.employees}
+            onDragOver={event => this.onDragOver(event)}
             handleDrop={this.handleDrop}
             gridPosition1={this.state.gridPosition1}
             gridPosition2={this.state.gridPosition2}
@@ -124,8 +109,20 @@ class App extends Component {
             employees={this.state.employees}
           />
         </div>
-        <Button variant="extendedFab">Add Employee</Button>;
-      </>
+        <Grid
+          handleDrop={this.handleDrop}
+          gridPosition1={this.state.gridPosition1}
+          gridPosition2={this.state.gridPosition2}
+          gridPosition3={this.state.gridPosition3}
+          gridPosition4={this.state.gridPosition4}
+          gridPosition5={this.state.gridPosition5}
+          gridPosition6={this.state.gridPosition6}
+          gridPosition7={this.state.gridPosition7}
+          gridPosition8={this.state.gridPosition8}
+          gridPosition9={this.state.gridPosition9}
+          employees={this.state.employees}
+        />
+      </div>
     );
   }
 }
