@@ -28,10 +28,11 @@ class Cell extends Component {
     return (
       <>
         <div
-          className={css.cell}
+          //className={css.cell}
           onDragOver={this.onDragOver}
           onDrop={this.onDrop}
         >
+          <div className={css.titleText}>{this.props.gridPosition}</div>
           <ul className={css.cell}>
             {this.props.employees
               .filter(employee => employee.position === this.props.gridPosition)

@@ -1,9 +1,16 @@
 .cell {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   width: 200px;
   height: 200px;
-  border: 2px;
+  border: 4px;
   background-color: white;
   margin: 2px;
   padding: 0;
   list-style: none;
+}
+
+.titleText {
 }
