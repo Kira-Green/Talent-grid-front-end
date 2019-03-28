@@ -8,7 +8,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      gridPosition0: "TalentBank",
+      gridPosition0: "",
       gridPosition1: "Exceptional Team Talent",
       gridPosition2: "Exceptional Functional Talent",
       gridPosition3: "Exceptional Organisational Talent",
@@ -19,59 +19,17 @@ class App extends Component {
       gridPosition8: "Functional Potential",
       gridPosition9: "Organisational Potential",
 
-      employees: [
-        {
-          name: "Kira Green",
-          staffNumber: "E123226",
-          position: "TalentBank"
-        },
-        {
-          name: "Manu Magalhaes",
-          staffNumber: "E654534",
-          position: "TalentBank"
-        },
-        {
-          name: "Stuart Roper",
-          staffNumber: "E135790",
-          position: "TalentBank"
-        },
-        {
-          name: "Donald Trump",
-          staffNumber: "E1231187",
-          position: "TalentBank"
-        },
-        {
-          name: "Theresa May",
-          staffNumber: "E654324",
-          position: "TalentBank"
-        },
-        {
-          name: "Jeremy Corbyn",
-          staffNumber: "E136543",
-          position: "TalentBank"
-        },
-        {
-          name: "Mickey Mouse",
-          staffNumber: "E123456",
-          position: "TalentBank"
-        },
-        {
-          name: "Donald Duck",
-          staffNumber: "E546744",
-          position: "TalentBank"
-        },
-        {
-          name: "Spongebob Squarepants",
-          staffNumber: "E137546",
-          position: "TalentBank"
-        },
-        {
-          name: "Micheal Knight",
-          staffNumber: "E123123",
-          position: "TalentBank"
-        }
-      ]
+      employees: []
     };
+  }
+
+  componentDidMount() {
+    fetch("http://localhost:5000/employees")
+      .then(response => response.json())
+      //.then(response => console.log(response))
+      .then(({ payload }) =>
+        this.setState(() => ({ employees: payload.employee }))
+      );
   }
 
   onDragOver = event => {
