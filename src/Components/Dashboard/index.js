@@ -11,13 +11,6 @@ import Button from "@material-ui/core/Button";
 
 import { Route, NavLink } from "react-router-dom";
 
-// logout = () => {
-//   localStorage.removeItem("my_token");
-//   this.setState(() => ({
-//     isLoggedIn: false
-//   }));
-// };
-
 class Dashboard extends React.Component {
   render() {
     return (
@@ -34,7 +27,7 @@ class Dashboard extends React.Component {
               Talent Grid
             </NavLink>
             <div className={css.logout}>
-              <Button>Log out</Button>
+              <Button onClick={this.props.logout}>Log out</Button>
             </div>
           </div>
         </div>

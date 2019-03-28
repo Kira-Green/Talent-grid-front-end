@@ -6,11 +6,34 @@
   background-image: linear-gradient(to right, #00cc33, #cc00cc);
 }
 
-.secretMessage {
-  font-size: 34px;
+.menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: cover;
+  height: 7vh;
+  background-color: #ea1d25;
+  font-family: "Open Sans", sans-serif;
+  color: #ffffff;
+  padding-left: 4vw;
 }
 
-.topMessage {
-  font-size: 40px;
-  color: linear-gradient(to right, red, yellow);
+.whitemenu {
+  display: flex;
+  justify-content: space-between;
+  width: cover;
+  max-height: 10vh;
+  background-color: #ffffff;
+  font-family: "Open Sans", sans-serif;
+  color: #ffffff;
+  /* padding-left: 4vw; */
+}
+
+img {
+  max-width: auto;
+  height: 100px;
+}
+#santander {
+  max-width: 300px;
+  height: auto;
 }

@@ -3,6 +3,8 @@ import Button from "@material-ui/core/Button";
 import Input from "@material-ui/core/Input";
 import TextField from "@material-ui/core/TextField";
 import css from "./Authed.module.css";
+import logo from "../Dashboard/logo.png";
+import santander from "../Dashboard/santander.png";
 
 // const API_ROUTE_PRIVATE = config.routes.private;
 // const API_ROUTE_LOGIN = config.routes.login;
@@ -59,8 +61,13 @@ class Authed extends React.Component {
   render() {
     return (
       <div className={css.Authed}>
+        <div className={css.menu} />
+        <div className={css.whitemenu}>
+          <img id={css.santander} src={santander} />
+          <img src={logo} />
+        </div>
         <div className={css.topMessage}>
-          <h1>You are not allowed to be here</h1>
+          <h2>Please login</h2>
         </div>
 
         <form onSubmit={this.login}>

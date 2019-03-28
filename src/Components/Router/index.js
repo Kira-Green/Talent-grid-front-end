@@ -19,6 +19,13 @@ class Router extends React.Component {
     }));
   };
 
+  logout = () => {
+    localStorage.removeItem("my_token");
+    this.setState(() => ({
+      isLoggedIn: false
+    }));
+  };
+
   render() {
     return (
       <BrowserRouter>
@@ -36,7 +43,7 @@ class Router extends React.Component {
               if (!this.state.isLoggedIn) {
                 return <Redirect to="/login" />;
               }
-              return <Dashboard />;
+              return <Dashboard logout={this.logout} />;
             }}
           />
         </Switch>
