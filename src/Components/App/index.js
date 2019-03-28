@@ -3,6 +3,9 @@ import css from "./App.module.css";
 import Grid from "../Grid";
 import TalentBank from "../TalentBank";
 import Button from "@material-ui/core/Button";
+import InputLabel from "@material-ui/core/InputLabel";
+
+import TextField from "@material-ui/core/TextField";
 
 class App extends Component {
   constructor(props) {
@@ -94,12 +97,15 @@ class App extends Component {
   render() {
     return (
       <div className={css.BankAndEmployeeContainer}>
-        <TalentBank
-          gridPosition={this.state.gridPosition0}
-          employees={this.state.employees}
-          onDragOver={event => this.onDragOver(event)}
-          handleDrop={this.handleDrop}
-        />
+        <div className={css.talentBankContainer}>
+          <TextField fullWidth="true" placeholder="search by employee number" />
+          <TalentBank
+            gridPosition={this.state.gridPosition0}
+            employees={this.state.employees}
+            onDragOver={event => this.onDragOver(event)}
+            handleDrop={this.handleDrop}
+          />
+        </div>
         <Grid
           handleDrop={this.handleDrop}
           gridPosition1={this.state.gridPosition1}
