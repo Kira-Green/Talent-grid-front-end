@@ -7,13 +7,13 @@
 }
 
 .gridRow:nth-child(2) {
-  border-bottom: 1px solid #ea1d25;
-  border-top: 1px solid #ea1d25;
+  border-bottom: 3px solid #ea1d25;
+  border-top: 3px solid #ea1d25;
 }
 
 .gridRow > div:nth-child(2) {
-  border-left: 1px solid #ea1d25;
-  border-right: 1px solid #ea1d25;
+  border-left: 3px solid #ea1d25;
+  border-right: 3px solid #ea1d25;
 }
 
 .gridContainer {

@@ -1,13 +1,13 @@
 .employee {
-    border: 2px solid #deecf1;
-    border-radius: 6px;
-    min-width: 130px;
-    padding: 6px;
-    margin: 4px;
-    transform: translateX(-15%);
+  border: 2px solid #deecf1;
+  border-radius: 6px;
+  min-width: 130px;
+  padding: 6px;
+  margin: 4px;
+  /* transform: translateX(-15%); */
 
-    color: #ea1d25;
-    text-align: center;
-    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
-    font-size: 14px;
+  color: #ea1d25;
+  text-align: center;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+  font-size: 14px;
 }

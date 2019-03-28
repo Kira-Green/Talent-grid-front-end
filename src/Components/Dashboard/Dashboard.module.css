@@ -1,0 +1,23 @@
+.menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100vw;
+  height: 7vh;
+  background-color: #ea1d25;
+  font-family: "Open Sans", sans-serif;
+  color: #ffffff;
+  padding-left: 4vw;
+}
+
+a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 17pt;
+}
+
+.linksContainer {
+  display: flex;
+  width: 25vw;
+  justify-content: space-between;
+}
