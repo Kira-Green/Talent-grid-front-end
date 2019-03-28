@@ -1,12 +1,42 @@
+.masterContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .BankAndEmployeeContainer {
   display: flex;
   justify-content: space-around;
   align-items: flex-end;
-  width: cover;
-  height: 70vh;
-  border: 1px solid limegreen;
+  padding-bottom: 5px;
+  min-width: 100%;
+  min-height: 70vh;
+  /* border: 1px solid limegreen; */
 }
 
 .talentBank {
   color: limegreen;
+}
+
+.inputContainer {
+  display: flex;
+  align-items: column;
+  flex-wrap: wrap;
+  max-width: 250px;
+  justify-content: flex-start;
+}
+
+.buttonsContainer {
+  display: flex;
+  align-self: flex-end;
+  margin-right: 250px;
+  justify-content: space-around;
+  align-items: flex-end;
+  width: 30vw;
+  height: 7vh;
+  /* border: 1px solid purple; */
+}
+
+.btn {
+  margin-top: 10px;
 }
