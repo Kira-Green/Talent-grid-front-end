@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import css from "./App.module.css";
 import Grid from "../Grid";
 import TalentBank from "../TalentBank";
+import Button from "@material-ui/core/Button";
 
 class App extends Component {
   constructor(props) {
@@ -112,6 +113,7 @@ class App extends Component {
           gridPosition9={this.state.gridPosition9}
           employees={this.state.employees}
         />
+        <Button variant="extendedFab">Add Employee</Button>;
       </div>
     );
   }
