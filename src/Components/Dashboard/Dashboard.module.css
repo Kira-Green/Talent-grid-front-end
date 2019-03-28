@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 100vw;
+  width: cover;
   height: 7vh;
   background-color: #ea1d25;
   font-family: "Open Sans", sans-serif;
@@ -20,4 +20,24 @@ a {
   display: flex;
   width: 25vw;
   justify-content: space-between;
+}
+
+.whitemenu {
+  display: flex;
+  justify-content: space-between;
+  width: cover;
+  max-height: 10vh;
+  background-color: #ffffff;
+  font-family: "Open Sans", sans-serif;
+  color: #ffffff;
+  /* padding-left: 4vw; */
+}
+
+img {
+  max-width: auto;
+  height: 100px;
+}
+#santander {
+  max-width: 300px;
+  height: auto;
 }

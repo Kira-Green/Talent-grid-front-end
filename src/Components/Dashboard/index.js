@@ -3,6 +3,8 @@ import App from "../App";
 import Home from "../Home";
 import EmployeeInfo from "../EmployeeInfo";
 import css from "./Dashboard.module.css";
+import logo from "./logo.png";
+import santander from "./santander.png";
 
 //const { NavLink, Route } = ReactRouterDOM;
 
@@ -24,6 +26,10 @@ class Dashboard extends React.Component {
               Automation
             </NavLink>
           </div>
+        </div>
+        <div className={css.whitemenu}>
+          <img id={css.santander} src={santander} />
+          <img src={logo} />
         </div>
         <div className="content">
           <Route exact path="/" component={Home} />
