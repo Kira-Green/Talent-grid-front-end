@@ -1,0 +1,21 @@
+.masterContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: cover;
+  height: cover;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 450px;
+  height: 250px;
+  border: 2px solid #deecf1;
+  list-style: none;
+  border-radius: 10px;
+  padding-right: 30px;
+}

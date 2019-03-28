@@ -96,31 +96,36 @@ class App extends Component {
 
   render() {
     return (
-      <div className={css.BankAndEmployeeContainer}>
-        <div className={css.talentBankContainer}>
-          <TextField fullWidth="true" placeholder="search by employee number" />
-          <TalentBank
-            gridPosition={this.state.gridPosition0}
-            employees={this.state.employees}
-            onDragOver={event => this.onDragOver(event)}
+      <>
+        <div className={css.BankAndEmployeeContainer}>
+          <div className={css.talentBankContainer}>
+            <TextField
+              fullWidth="true"
+              placeholder="search by employee number"
+            />
+            <TalentBank
+              gridPosition={this.state.gridPosition0}
+              employees={this.state.employees}
+              onDragOver={event => this.onDragOver(event)}
+              handleDrop={this.handleDrop}
+            />
+          </div>
+          <Grid
             handleDrop={this.handleDrop}
+            gridPosition1={this.state.gridPosition1}
+            gridPosition2={this.state.gridPosition2}
+            gridPosition3={this.state.gridPosition3}
+            gridPosition4={this.state.gridPosition4}
+            gridPosition5={this.state.gridPosition5}
+            gridPosition6={this.state.gridPosition6}
+            gridPosition7={this.state.gridPosition7}
+            gridPosition8={this.state.gridPosition8}
+            gridPosition9={this.state.gridPosition9}
+            employees={this.state.employees}
           />
         </div>
-        <Grid
-          handleDrop={this.handleDrop}
-          gridPosition1={this.state.gridPosition1}
-          gridPosition2={this.state.gridPosition2}
-          gridPosition3={this.state.gridPosition3}
-          gridPosition4={this.state.gridPosition4}
-          gridPosition5={this.state.gridPosition5}
-          gridPosition6={this.state.gridPosition6}
-          gridPosition7={this.state.gridPosition7}
-          gridPosition8={this.state.gridPosition8}
-          gridPosition9={this.state.gridPosition9}
-          employees={this.state.employees}
-        />
         <Button variant="extendedFab">Add Employee</Button>;
-      </div>
+      </>
     );
   }
 }

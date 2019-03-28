@@ -1,0 +1,16 @@
+.secretButton {
+  background-image: linear-gradient(to right, red, yellow);
+}
+
+.loginButton {
+  background-image: linear-gradient(to right, #00cc33, #cc00cc);
+}
+
+.secretMessage {
+  font-size: 34px;
+}
+
+.topMessage {
+  font-size: 40px;
+  color: linear-gradient(to right, red, yellow);
+}

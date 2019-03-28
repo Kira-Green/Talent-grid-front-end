@@ -1,9 +1,9 @@
 .BankAndEmployeeContainer {
   display: flex;
   justify-content: space-around;
-  align-items: center;
+  align-items: flex-end;
   width: cover;
-  height: 100vh;
+  height: 70vh;
   border: 1px solid limegreen;
 }
 

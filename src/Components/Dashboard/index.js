@@ -5,10 +5,18 @@ import EmployeeInfo from "../EmployeeInfo";
 import css from "./Dashboard.module.css";
 import logo from "./logo.png";
 import santander from "./santander.png";
+import Button from "@material-ui/core/Button";
 
 //const { NavLink, Route } = ReactRouterDOM;
 
 import { Route, NavLink } from "react-router-dom";
+
+// logout = () => {
+//   localStorage.removeItem("my_token");
+//   this.setState(() => ({
+//     isLoggedIn: false
+//   }));
+// };
 
 class Dashboard extends React.Component {
   render() {
@@ -20,11 +28,14 @@ class Dashboard extends React.Component {
               Home
             </NavLink>
             <NavLink exact to="/employeeInfo">
-              Manage Employee Info
+              Employee
             </NavLink>
             <NavLink exact to="/createNewGrid">
-              Automation
+              Talent Grid
             </NavLink>
+            <div className={css.logout}>
+              <Button>Log out</Button>
+            </div>
           </div>
         </div>
         <div className={css.whitemenu}>

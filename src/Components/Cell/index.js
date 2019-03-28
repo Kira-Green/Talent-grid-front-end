@@ -32,7 +32,7 @@ class Cell extends Component {
           onDragOver={this.onDragOver}
           onDrop={this.onDrop}
         >
-          <div className={css.titleText}>{this.props.gridPosition}</div>
+          {/* <div className={css.titleText}>{this.props.gridPosition}</div> */}
           <ul className={css.cell}>
             {this.props.employees
               .filter(employee => employee.position === this.props.gridPosition)

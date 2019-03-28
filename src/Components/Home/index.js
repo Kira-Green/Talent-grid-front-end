@@ -1,8 +1,11 @@
 import React from "react";
+import Login from "../Login";
+import Register from "../Register";
+import Authed from "../Authed";
 
 class Home extends React.Component {
   render() {
-    return <h1>This is the Home Page!!</h1>;
+    return <div>Welcome</div>;
   }
 }
 
