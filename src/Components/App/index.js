@@ -37,22 +37,20 @@ class App extends Component {
   //     );
   // }
 
-  prepopulate = () => {
-    fetch("http://localhost:5000/employees")
-      .then(response => response.json())
-      //.then(response => console.log(response))
-      .then(({ payload }) =>
-        this.setState(() => ({ employees: payload.employee }))
-      );
-  };
-
-  // reset = index => {
-
-  //   this.setState(state => ({
-  //     employees: [{ ...state.employees[index], position: "" }]
-  //   }));
-
+  // prepopulate = () => {
+  //   fetch("http://localhost:5000/employees")
+  //     .then(response => response.json())
+  //     //.then(response => console.log(response))
+  //     .then(({ payload }) =>
+  //       this.setState(() => ({ employees: payload.employee }))
+  //     );
   // };
+
+  reset = () => {
+    this.setState(state => ({
+      employees: []
+    }));
+  };
 
   onDragOver = event => {
     event.preventDefault();
@@ -97,6 +95,10 @@ class App extends Component {
 
   print = () => {
     window.print();
+  };
+
+  save = () => {
+    alert("Session saved");
   };
 
   render() {
@@ -157,17 +159,24 @@ class App extends Component {
             />
           </div>
           <div className={css.buttonsContainer}>
-            <Button color="secondary" onClick={this.prepopulate}>
+            {/* <Button color="secondary" onClick={this.prepopulate}>
               Preopulate
-            </Button>
+            </Button> */}
             <Button color="secondary" onClick={this.reset}>
               Reset
             </Button>
-            <Button color="secondary">Save</Button>
+            <Button color="secondary" onClick={() => alert("Session saved")}>
+              Save
+            </Button>
             <Button color="secondary" onClick={this.print}>
               Print
             </Button>
-            <Button color="secondary">Email</Button>
+            <Button
+              color="secondary"
+              onClick={() => alert("Session emailed to bukola@soc.com")}
+            >
+              Email
+            </Button>
           </div>
         </div>
       </>
