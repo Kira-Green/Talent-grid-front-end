@@ -21,6 +21,6 @@
   padding-right: 30px;
 }
 
-img {
-  background-image: cover;
+#btn {
+  align-self: center;
 }

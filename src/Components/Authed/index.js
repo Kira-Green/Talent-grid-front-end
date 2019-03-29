@@ -5,6 +5,7 @@ import TextField from "@material-ui/core/TextField";
 import css from "./Authed.module.css";
 import logo from "../Dashboard/logo.png";
 import santander from "../Dashboard/santander.png";
+import cssEmployee from "../EmployeeInfo/EmployeeInfo.module.css";
 
 // const API_ROUTE_PRIVATE = config.routes.private;
 // const API_ROUTE_LOGIN = config.routes.login;
@@ -66,29 +67,39 @@ class Authed extends React.Component {
           <img id={css.santander} src={santander} />
           <img src={logo} />
         </div>
-        <div className={css.topMessage}>
-          <h2>Please login</h2>
+        <div className={cssEmployee.masterContainer}>
+          <div className={css.topMessage}>
+            <h1>Welcome to Talent Grid</h1>
+            <h2>Please login</h2>
+          </div>
+          <div>
+            <form className={cssEmployee.container} onSubmit={this.login}>
+              <TextField
+                onChange={this.onChange}
+                value={this.state.email}
+                name="email"
+                type="email"
+                // fullWidth="true"
+                placeholder="email"
+              />
+              <Input
+                onChange={this.onChange}
+                value={this.state.password}
+                name="password"
+                // fullWidth="true"
+                type="password"
+                placeholder="password"
+              />
+              <Button
+                className={cssEmployee.btn}
+                color="secondary"
+                type="submit"
+              >
+                log in
+              </Button>
+            </form>
+          </div>
         </div>
-
-        <form onSubmit={this.login}>
-          <TextField
-            onChange={this.onChange}
-            value={this.state.email}
-            name="email"
-            type="email"
-            placeholder="email"
-          />
-          <Input
-            onChange={this.onChange}
-            value={this.state.password}
-            name="password"
-            type="password"
-            placeholder="password"
-          />
-          <Button color="primary" type="submit">
-            log in
-          </Button>
-        </form>
       </div>
     );
   }
