@@ -6,6 +6,7 @@ import css from "./Authed.module.css";
 import logo from "../Dashboard/logo.png";
 import santander from "../Dashboard/santander.png";
 import cssEmployee from "../EmployeeInfo/EmployeeInfo.module.css";
+import { api } from "../../config";
 
 // const API_ROUTE_PRIVATE = config.routes.private;
 // const API_ROUTE_LOGIN = config.routes.login;
@@ -36,7 +37,7 @@ class Authed extends React.Component {
 
   login = event => {
     event.preventDefault();
-    fetch("http://localhost:5000/login", {
+    fetch(api.login, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

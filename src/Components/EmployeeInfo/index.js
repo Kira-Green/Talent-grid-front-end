@@ -3,6 +3,7 @@ import { CssBaseline } from "@material-ui/core";
 import css from "./EmployeeInfo.module.css";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
+import { api } from "../../config";
 
 let searchValue = "";
 class EmployeeInfo extends React.Component {
@@ -33,7 +34,7 @@ class EmployeeInfo extends React.Component {
   };
 
   handleSubmit = () => {
-    fetch(`http://localhost:5000/employees`, {
+    fetch(api.employees, {
       method: "POST",
       headers: {
         "Content-Type": "application/json" // <-- Specifying the Content-Type
