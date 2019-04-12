@@ -4,6 +4,7 @@ import Grid from "../Grid";
 import TalentBank from "../TalentBank";
 import Button from "@material-ui/core/Button";
 import InputLabel from "@material-ui/core/InputLabel";
+import { api } from "../../config";
 
 import TextField from "@material-ui/core/TextField";
 
@@ -76,7 +77,7 @@ class App extends Component {
   };
 
   findEmployee = () => {
-    fetch(`http://localhost:5000/employees/${this.state.search}`)
+    fetch(`${api.employees}/${this.state.search}`)
       .then(response => response.json())
       .then(({ success, payload }) => {
         if (success && payload.employee) {
